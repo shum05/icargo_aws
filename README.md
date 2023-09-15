@@ -38,11 +38,16 @@ Enhanced security and competence in cargo screening operations.
 
 ## Technology Stack:
 
-Programming Language: Python 3.9
-Machine Learning Frameworks: pandas,numpy,seaborn,matplotlib,scikit-learn,catboost,xgboost
-Web Interface: Flask (for a user-friendly web interface)
-Database: MSSQL (for storing screening data)
-Deployment:AWS- Docker and Kubernetes for containerization and orchestration.
+Programming Language:
+     Python 3.9
+Machine Learning Frameworks:
+     pandas,numpy,seaborn,matplotlib,scikit-learn,catboost,xgboost
+Web Interface: 
+    Flask (for a user-friendly web interface)
+Database: 
+    MSSQL (for storing screening data)
+Deployment:
+    AWS- Docker and Kubernetes for containerization and orchestration.
  
 
 ## Disclaimer:
