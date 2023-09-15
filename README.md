@@ -1,42 +1,50 @@
 # ICARGO MACHINE LEARNING PROJECT
 ## Project Title: 
-    Cargo Screening ML
+    Cargo Screening Certification Predictor
 ## Description:
-The Cargo Screening ML project is an advanced cargo inspection system that leverages machine learning techniques to enhance the safety and efficiency of cargo screening at airports and logistics hubs. This system is designed to assist airlines cargo management and security personnel by automating the screening process and providing detailed screening information based on an airway bill number.
+The Cargo Screening Certification Predictor is a machine learning project designed to assist cargo screening organizations in identifying individuals who are likely to pass the final certification exam with a score of 85% or higher. The project leverages a dataset containing training assessment test scores, HR initial recruitment exam scores, and a variety of demographic features to make predictions.
 
-## Features:
+## Background:
+In the context of cargo screening, ensuring that individuals meet the required certification standards is crucial for maintaining the security and efficiency of cargo operations. The final certification exam serves as a critical benchmark for assessing an individual's readiness and competence in this field.
+### Dataset:
+ The project uses a comprehensive dataset that includes the following key features:
 
-### Airway Bill Input:
- Users can input an airway bill number, which uniquely identifies a cargo shipment.
-### Machine Learning Screening: 
-The system employs state-of-the-art machine learning algorithms to analyze cargo contents and identify potential security risks.
-### Screening Details:
- Upon inputting an airway bill number, the system returns comprehensive screening details, including:
-    Cargo Contents: A detailed list of items within the cargo shipment.
-    Security Assessment: Risk assessment based on cargo content analysis.
-    Screening History: screening method, screening date and time, screening location/facility,screener details,  for the given cargo.
+Training Assessment Test Scores: Scores obtained by individuals in post-training assessments, which evaluate their understanding of cargo screening procedures and principles.
+
+HR Initial Recruitment Exam Score: The score achieved by candidates in the HR initial recruitment exam, which measures their baseline aptitude and knowledge.
+
+Demographic Features: Additional demographic information about each candidate, such as age, gender, educational background, and work experience.
+## Objective:
+The primary objective of this project is to build a machine learning model capable of predicting whether a candidate is likely to pass the final certification exam with a score of at least 85%. By doing so, cargo screening organizations can proactively identify individuals who may require additional training or support to meet the certification criteria.
+## Methodology:
+ The project follows these key steps:
+
+Data Preprocessing: The dataset is cleaned, missing values are handled, and categorical features are encoded appropriately.
+
+Feature Selection: Relevant features are selected, and feature engineering may be performed to create new informative features.
+
+Model Building: Various machine learning algorithms, such as logistic regression, decision trees, random forests, and neural networks, are trained and evaluated on the dataset.
+
+Model Evaluation: Model performance is assessed using metrics like accuracy, precision, recall, and F1-score, with a focus on achieving high accuracy and recall for identifying potential candidates.
+
+Deployment: The best-performing model is deployed as a prediction tool for cargo screening organizations to assess candidates' likelihood of passing the final certification exam.
 ## Benefits:
 
-Enhanced Security: By utilizing machine learning, the project improves cargo screening accuracy and reduces the risk of security breaches.
-Efficiency: Automation streamlines the cargo screening process, saving time and resources.
-Transparency: Users gain access to detailed cargo screening reports, promoting transparency and accountability.
-## Use Cases:
+The Cargo Screening Certification Predictor offers several benefits, including:
 
-### Airport Cargo Screening: 
-Expedite the inspection of cargo shipments at airports while maintaining a high level of security.
-### Logistics and Freight Companies: 
-Improve cargo handling and risk assessment for logistics and freight operations.
+Improved efficiency in identifying candidates likely to succeed in the final certification exam.
+Reduced training costs by targeting resources on individuals who need additional support.
+Enhanced security and competence in cargo screening operations.
+
 ## Technology Stack:
 
 Programming Language: Python 3.9
 Machine Learning Frameworks: pandas,numpy,seaborn,matplotlib,scikit-learn,catboost,xgboost
 Web Interface: Flask (for a user-friendly web interface)
-Database: PostgreSQL (for storing screening data)
-Deployment: Docker and Kubernetes for containerization and orchestration.
+Database: MSSQL (for storing screening data)
+Deployment:AWS- Docker and Kubernetes for containerization and orchestration.
  
-## Getting Started:
-To use the Cargo Screening ML system, simply enter the airway bill number of the cargo shipment you wish to screen. The system will then provide you with detailed screening results and recommendations.
 
 ## Disclaimer:
-This project is intended for demonstration purposes and as a proof-of-concept for cargo screening automation. It is not intended for real-world cargo security applications without appropriate validation and certification.
+This project is intended for demonstration purposes and as a proof-of-concept for cargo screening certification automation. It is not intended for real-world cargo security applications without appropriate validation and certification.
 
