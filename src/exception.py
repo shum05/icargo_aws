@@ -24,13 +24,13 @@ class CustomException(Exception):  #  inherits from the built-in Exception class
     
 # Research
 # run 'python src/exception.py' from terminal
-import math
-if __name__=="__main__":
-    try:
-        res = math.sqrt(-4)
-    except Exception as e:
-        logging.info("NaN- sqrt of a negative number")
-        raise CustomException(e,sys)
+# import math
+# if __name__=="__main__":
+#     try:
+#         res = math.sqrt(-4)
+#     except Exception as e:
+#         logging.info("NaN- sqrt of a negative number")
+#         raise CustomException(e,sys)
      
     
 #     # Note that 'Logs' folder created, formatted log recoreded
