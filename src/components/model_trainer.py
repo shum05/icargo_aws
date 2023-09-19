@@ -23,19 +23,20 @@ from src.utils import save_object, evaluate_models
 class ModelTrainerConfig:
     trained_model_file_path = os.path.join("artifacts", "model.pkl")
 
-class ModelTrainer:
+class ModelTrainer: # for training the model
     def __init__(self):
         self.model_trainer_config = ModelTrainerConfig()
 
     def initiate_model_trainer(self, train_array, test_array):
         try:
-            logging.info("Split training and test input data")
+            logging.info("Split train and test input data")
             X_train, y_train, X_test, y_test = (
                 train_array[:, :-1],
                 train_array[:, -1],
                 test_array[:, :-1],
                 test_array[:, -1],
             )
+            # create dictionary of models
             models = {
                 "Random Forest": RandomForestClassifier(),
                 "Decision Tree": DecisionTreeClassifier(),
@@ -97,7 +98,7 @@ class ModelTrainer:
 
             best_model = models[best_model_name]
 
-            if best_model_accuracy < 0.6:
+            if best_model_accuracy < 0.6:  # setting a treshold value
                 raise CustomException("No best model found")
 
             logging.info(f"Best found model on both training and testing dataset")
