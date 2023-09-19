@@ -12,8 +12,8 @@ from dataclasses import dataclass
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
 
-from src.components.model_trainer import ModelTrainerConfig
-from src.components.model_trainer import ModelTrainer
+# from src.components.model_trainer import ModelTrainerConfig
+# from src.components.model_trainer import ModelTrainer
 
 # Define a class as a data class (using @dataclass)  for storing configuration parameters related to data ingestion. It includes paths for training, testing, and raw data files.
 @dataclass
@@ -27,9 +27,9 @@ class DataIngestion:   # This class handles the data ingestion process
         self.ingestion_config=DataIngestionConfig()
  # fun to Reads a dataset from a CSV file, perform a train-test split, and save the training and testing datasets into separate CSV files.
     def initiate_data_ingestion(self):
-        logging.info("Entered the data ingestion method or component")
+        logging.info("Begun data ingestion method/component")
         try:
-            df=pd.read_csv('notebook\data\stud.csv')
+            df=pd.read_csv('notebook\data\cleaned_cargo_data.csv')
             logging.info('Read the dataset as dataframe')
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
@@ -43,7 +43,7 @@ class DataIngestion:   # This class handles the data ingestion process
 
             test_set.to_csv(self.ingestion_config.test_data_path,index=False,header=True)
 
-            logging.info("Inmgestion of the data iss completed")
+            logging.info("Data Inmgestion Successfully completed")
 
             return(
                 self.ingestion_config.train_data_path,
@@ -60,8 +60,8 @@ if __name__=="__main__":
     data_transformation=DataTransformation()
     train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
 
-    modeltrainer=ModelTrainer()
-    print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
+    # modeltrainer=ModelTrainer()
+    # print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
 
 
 
