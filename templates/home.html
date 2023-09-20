@@ -23,22 +23,22 @@
         <br>
         <div class="mb-3">
             <label class="form-label">Race or Ethnicity</label>
-            <select class="form-control" name="ethnicity" placeholder="Enter you ethnicity" required>
+            <select class="form-control" name="race_ethnicity" placeholder="Enter you ethnicity" required>
                 <option class="placeholder" selected disabled value="">Select Race/Ethnicity</option>
                 <option value="group A">
-                    Group A
+                    group A
                 </option>
                 <option value="group B">
-                    Group B
+                    group B
                 </option>
                 <option value="group C">
-                    Group C
+                    group C
                 </option>
                 <option value="group D">
-                    Group D
+                    group D
                 </option>
                 <option value="group E">
-                    Group E
+                    group E
                 </option>
             </select>
         </div>
@@ -47,7 +47,7 @@
         <div class="mb-3">
             <label class="form-label">Level of Education</label>
             <select class="form-control" name="level_of_education"
-                placeholder="Enter you Parent Education" required>
+                placeholder="Enter you level Education" required>
                 <option class="placeholder" selected disabled value="">Select Examinee's level of Education</option>
                 <option value="associate's degree">
                     associate's degree
@@ -73,15 +73,15 @@
         <br>
         <div class="mb-3">
             <label class="form-label">language proficiency</label>
-            <select class="form-control" name="language" placeholder="Enter your Language profeciency" required>
+            <select class="form-control" name="language_proficiency" placeholder="Enter your Language profeciency" required>
                 <option class="placeholder" selected disabled value="">Select Examinee'sLanguage profeciency</option>
-                <option value="free/reduced">
+                <option value="fluent">
                     fluent
                 </option>
-                <option value="standard">
+                <option value="intermediate">
                     intermediate
                 </option>
-                <option value="standard">
+                <option value="limitted">
                     limitted
                 </option>
             </select>
@@ -96,7 +96,7 @@
                 <option value="none">
                     none
                 </option>
-                <option value="completed">
+                <option value="provided">
                     provided
                 </option>
             </select>
@@ -105,7 +105,7 @@
         <br>
         <div class="mb-3">
             <label class="form-label">pre_exam average score</label>
-            <input class="form-control" type="number" name="pre_exam"
+            <input class="form-control" type="number" name="pre_exams_average"
                 placeholder="Enter your Reading score" min='0' max='100' />
         </div>
         <br>
@@ -118,9 +118,9 @@
     </form>
     <br>
     <br>
-    <h2 style= "color:red" >
+    <h1 style= "color:red" >
        The  prediction is: {{results}}
-    </h2>
+    </h1>
    <body>
 </html> 
 

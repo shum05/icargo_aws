@@ -16,28 +16,58 @@ def index():
     return render_template('index.html') 
 
 @app.route('/predictdata',methods=['GET','POST'])
+# def predict_datapoint():
+#     if request.method=='GET':
+#         return render_template('home.html')
+#     else:
+#         data=CustomData(
+#             gender=request.form.get('gender'),
+#             race_ethnicity=request.form.get('race_ethnicity'),
+#             level_of_education=request.form.get('level_of_education'),
+#             language_proficiency=request.form.get('language_proficiency'),
+#             training_manuals=request.form.get('training_manuals'),
+#             pre_exams_average=float(request.form.get('pre_exams_average'))
+            
+#         )
+#         pred_df=data.get_data_as_data_frame()
+#         print(pred_df)
+#         print("Before Prediction")
+
+#         predict_pipeline=PredictPipeline()
+#         print("Mid Prediction")
+#         results=predict_pipeline.predict(pred_df)
+#         print("after Prediction")
+#         return render_template('home.html',results=results[0])
 def predict_datapoint():
-    if request.method=='GET':
+    if request.method == 'GET':
         return render_template('home.html')
     else:
-        data=CustomData(
+        data = CustomData(
             gender=request.form.get('gender'),
-            race_ethnicity=request.form.get('ethnicity'),
-            parental_level_of_education=request.form.get('level_of_education'),
-            lunch=request.form.get('language'),
-            test_preparation_course=request.form.get('training_manuals'),
-            reading_score=float(request.form.get('pre_exam'))
-            
+            race_ethnicity=request.form.get('race_ethnicity'),
+            level_of_education=request.form.get('level_of_education'),
+            language_proficiency=request.form.get('language_proficiency'),
+            training_manuals=request.form.get('training_manuals'),
+            pre_exams_average=float(request.form.get('pre_exams_average'))
         )
-        pred_df=data.get_data_as_data_frame()
+        pred_df = data.get_data_as_data_frame()
         print(pred_df)
         print("Before Prediction")
 
-        predict_pipeline=PredictPipeline()
+        predict_pipeline = PredictPipeline()
         print("Mid Prediction")
-        results=predict_pipeline.predict(pred_df)
+        results = predict_pipeline.predict(pred_df)
         print("after Prediction")
-        return render_template('home.html',results=results[0])
+        
+        # Modify the following lines to return 'PASS' or 'FAIL' based on results[0]
+        if results[0] == 1.0:
+            result_text = 'PASS'
+        elif results[0] == 0.0:
+            result_text = 'FAIL'
+        else:
+            result_text = 'UNKNOWN'  # Handle other cases if needed
+        
+        return render_template('home.html', results=result_text)
     
 # run app.py
 if __name__=="__main__":
