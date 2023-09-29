@@ -1,17 +1,17 @@
-# Use the official Python 3.9 image as the base image
+# Use the official Python image from Docker Hub
 FROM python:3.9-slim-buster
 
-# Set the working directory inside the container
+# Set the working directory within the container
 WORKDIR /app
 
-# Copy the contents of your local "app" directory into the container at /app
-COPY . /app
+# Copy the local requirements.txt file to the container's working directory
+COPY requirements.txt .
 
-# Run any additional commands you need to set up your application
-# For example, you can install Python dependencies, configure your app, etc.
+# Install Python dependencies using pip
 RUN pip install -r requirements.txt
-RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
-           # If you need to make a script executable
 
-# Define the command to run your application when the container starts
-CMD ["python", "app.py"]
+# Copy the rest of your application code to the container
+COPY . .
+
+# Specify the command to run when the container starts
+CMD [ "python", "app.py" ]
