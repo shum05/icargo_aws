@@ -10,7 +10,7 @@ COPY . /app
 # Run any additional commands you need to set up your application
 # For example, you can install Python dependencies, configure your app, etc.
 RUN pip install -r requirements.txt  # If you have a requirements file
-RUN apt update -y && curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
            # If you need to make a script executable
 
 # Define the command to run your application when the container starts
