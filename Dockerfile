@@ -5,13 +5,13 @@ FROM python:3.9-slim-buster
 WORKDIR /app
 
 # Copy the contents of your local "app" directory into the container at /app
-COPY ./app
+COPY . /app
 
 # Run any additional commands you need to set up your application
 # For example, you can install Python dependencies, configure your app, etc.
 RUN pip install -r requirements.txt  # If you have a requirements file
-RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+RUN apt update -y && curl -sL https://aka.ms/InstallAzureCLIDeb | bash
            # If you need to make a script executable
 
 # Define the command to run your application when the container starts
-CMD ["python", "my_app.py"]
+CMD ["python", "app.py"]
