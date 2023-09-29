@@ -16,28 +16,7 @@ def index():
     return render_template('index.html') 
 
 @app.route('/predictdata',methods=['GET','POST'])
-# def predict_datapoint():
-#     if request.method=='GET':
-#         return render_template('home.html')
-#     else:
-#         data=CustomData(
-#             gender=request.form.get('gender'),
-#             race_ethnicity=request.form.get('race_ethnicity'),
-#             level_of_education=request.form.get('level_of_education'),
-#             language_proficiency=request.form.get('language_proficiency'),
-#             training_manuals=request.form.get('training_manuals'),
-#             pre_exams_average=float(request.form.get('pre_exams_average'))
-            
-#         )
-#         pred_df=data.get_data_as_data_frame()
-#         print(pred_df)
-#         print("Before Prediction")
 
-#         predict_pipeline=PredictPipeline()
-#         print("Mid Prediction")
-#         results=predict_pipeline.predict(pred_df)
-#         print("after Prediction")
-#         return render_template('home.html',results=results[0])
 def predict_datapoint():
     if request.method == 'GET':
         return render_template('home.html')
