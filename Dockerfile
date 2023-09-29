@@ -9,7 +9,7 @@ COPY . /app
 
 # Run any additional commands you need to set up your application
 # For example, you can install Python dependencies, configure your app, etc.
-RUN pip install -r requirements.txt  # If you have a requirements file
+RUN pip install -r requirements.txt
 RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
            # If you need to make a script executable
 
