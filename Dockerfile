@@ -1,14 +1,16 @@
-# Use the official Python image from Docker Hub
+# Use an official Python runtime as a parent image
 FROM python:3.9-slim-buster
 
-# Set the working directory within the container
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy the local requirements.txt file to the container's working directory
-COPY . /app
-RUN apt update -y
-# Install Python dependencies using pip
-RUN apt-get update && pip install -r requirements.txt
+# Copy the current directory contents into the container at /app
+COPY ./app /app
+
+# Install any other Python packages you need from requirements.txt
+RUN apt-get update -y && \
+    apt-get install -y python3-pip && \
+    pip install -r requirements.txt
 
 # Specify the command to run when the container starts
-CMD ["python3", "app.py"]
+CMD ["python", "app.py"]
