@@ -5,13 +5,10 @@ FROM python:3.9-slim-buster
 WORKDIR /app
 
 # Copy the local requirements.txt file to the container's working directory
-COPY requirements.txt .
-
+COPY . /app
+RUN apt update -y
 # Install Python dependencies using pip
-RUN pip install -r requirements.txt
-
-# Copy the rest of your application code to the container
-COPY . .
+RUN apt-get update && pip install -r requirements.txt
 
 # Specify the command to run when the container starts
-CMD [ "python", "app.py" ]
+CMD ["python3", "app.py"]
