@@ -4,7 +4,7 @@ FROM python:3.9-slim-buster
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
+# Copy the entire proj into the container at /app
 COPY . /app
 
 # Install any other Python packages you need from requirements.txt
