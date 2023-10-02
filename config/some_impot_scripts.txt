@@ -1,5 +1,0 @@
-Login server= icargoml.azurecr.io
-Username= icargoML
-pw= r2oEU0S2MSFkbSf001cSVm4DjHa8ptUtk5GKZcZ2IC+ACRCaKrFa
-
-
