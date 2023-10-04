@@ -53,3 +53,48 @@ Deployment:
 ## Disclaimer:
 This project is intended for demonstration purposes and as a proof-of-concept for cargo screening certification automation. It is not intended for real-world cargo security applications without appropriate validation and certification.
 
+## AWS (ec2 & ecr) Deployment with Github Actions
+Steps:
+ - Prerequisites==>Prepare the entire project deployment and push it to a github repo
+ - Docker And Workflow Set up
+ - Iam User Setup In AWS ==> with ec2 and ecr full access policies
+ - ECR Repository set up ==> 
+-  EC2 Instance set up
+ - Docker Set up In EC2 instance
+ - App runner set up in github
+ - run Workflow
+
+1. Docker
+	- docker images
+	- docker build -t s3sdocker/icargoaws .
+	- docker login
+	- un
+	- pw
+	- docker push s3sdocker/icargoaws:latest
+
+2. commands to exec to set up ec2(from cli)
+	#### optinal
+	- sudo apt-get update -y
+	- sudo apt-get upgrade
+	#### required
+	- curl -fsSL https://get.docker.com -o get-docker.sh
+	- sudo sh get-docker.sh
+	- sudo usermod -aG docker ubuntu
+	- newgrp docker
+3. commands to exec to setup github self-hosted runner on ec2(from cli)=> similar to but not same as
+	### Download
+		- # Create a folder
+		- $ mkdir actions-runner && cd actions-runner# Download the latest runner package
+		- $ curl -o actions-runner-linux-x64-2.309.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.309.0/actions-runner-linux-x64-2.309.0.tar.gz# Optional: Validate the hash
+		- $ echo "2974243bab2a282349ac833475d241d5273605d3628f0685bd07fb5530f9bb1a  actions-runner-linux-x64-2.309.0.tar.gz" | shasum -a 256 -c# Extract the installer
+		- $ tar xzf ./actions-runner-linux-x64-2.309.0.tar.gz
+	### Configure
+		# Create the runner and start the configuration experience
+		- $ ./config.sh --url https://github.com/shum05/icargo_aws --token BARWQAWY2BXSWRKCLLGW4XTFDN2TC# Last step, run it!
+		- $ ./run.sh
+4. Github and ecr Repo setup
+	- AWS_ACCESS_KEY_ID= AKIAXF2SATNMMAQLRY5D
+	- AWS_SECRET_ACCESS_KEY=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
+	- AWS_REGION= us-west-1
+	- AWS_ECR_LOGIN_URI= 493556374360.dkr.ecr.us-west-1.amazonaws.com
+	- ECR_REPOSITORY_NAME= icargoaws
